@@ -5,7 +5,24 @@ package model.entities;
  */
 public class Post {
 
+    private int postId;
 
+    public String getPostText() {
+        return postText;
+    }
 
+    public void setPostText(String postText) {
+        this.postText = postText;
+    }
+
+    private String postText;
+
+    public int getPostId() {
+        return postId;
+    }
+
+    public void setPostId(int postId) {
+        this.postId = postId;
+    }
 
 }

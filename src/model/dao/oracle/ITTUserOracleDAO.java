@@ -2,13 +2,14 @@ package model.dao.oracle;
 
 import model.dao.ITTUserDAO;
 import model.entities.ITTUser;
+import oracleDBConnection.JDBCOracleConnector;
 
 /**
  * Created by antho_000 on 30/11/2016.
  */
 public class ITTUserOracleDAO implements ITTUserDAO {
 
-    private JDBC dbMgr;
+    private JDBCOracleConnector dbMgr;
 
 
     @Override
