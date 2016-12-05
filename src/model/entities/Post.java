@@ -1,9 +1,14 @@
 package model.entities;
 
+import model.dao.oracle.PostOracleDAO;
+import model.dao.oracle.oracleDaoFactory.OracleDAOFactory;
+
 /**
  * Created by antho_000 on 30/11/2016.
  */
 public class Post {
+
+    private static OracleDAOFactory oracleDAOFactory = new OracleDAOFactory();
 
     private int postId;
 
@@ -23,6 +28,12 @@ public class Post {
 
     public void setPostId(int postId) {
         this.postId = postId;
+    }
+
+
+    public static PostOracleDAO getPostOracleDAO()
+    {
+        return oracleDAOFactory.getPostOracleDAO();
     }
 
 }

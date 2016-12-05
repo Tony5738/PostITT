@@ -1,19 +1,27 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import loginForm.LoginController;
-import model.dao.oracle.oracleDaoFactory.OracleDaoFactory;
-import model.entities.Post;
+
+import java.io.IOException;
 
 public class Main extends Application {
+
+
+
+
+    private Stage primaryStage;
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
 
     public static void main(String[] args) {
 
@@ -22,17 +30,39 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //FXMLLoader loader = new FXMLLoader();
-        //Group root = FXMLLoader.load(getClass().getResource("login_form.fxml"));
+
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("PostITT - Log in");
+        this.primaryStage.getIcons().add(new Image("img/post_it.png"));
+
         Group root = new Group();
 
-        //LoginController controller = loader.getController();
-        //controller.setMainApp(this);
 
-        primaryStage.setTitle("Login");
-        primaryStage.setScene(new Scene(root, 300, 275,Color.LIGHTCYAN));
+        try {
+            // Load login form.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/login_form.fxml"));
+            Pane loginForm = (Pane) loader.load();
 
-              Button btn = new Button();
+
+            Scene scene = new Scene(root,Color.WHITE);
+            loginForm.prefHeightProperty().bind(scene.heightProperty());
+            loginForm.prefWidthProperty().bind(scene.widthProperty());
+
+            root.getChildren().add(loginForm);
+            this.primaryStage.setScene(scene);
+            this.primaryStage.show();
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK);
+            alert.showAndWait();
+        }
+    }
+
+        /*      Button btn = new Button();
         btn.setLayoutX(100);
         btn.setLayoutY(80);
         btn.setText("dbTest");
@@ -41,7 +71,7 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 Post post = new Post();
-                OracleDaoFactory daoFactory = new OracleDaoFactory();
+                OracleDAOFactory daoFactory = new OracleDAOFactory();
                 post = daoFactory.getPostOracleDAO().find();
 
                 if(post != null)
@@ -52,10 +82,10 @@ public class Main extends Application {
 
             }
         });
-        root.getChildren().add(btn);
+        root.getChildren().add(btn);*/
 
-        primaryStage.show();
-    }
+
+
 
 
 }

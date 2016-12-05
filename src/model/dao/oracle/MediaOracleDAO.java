@@ -11,6 +11,10 @@ public class MediaOracleDAO implements MediaDAO {
 
     private JDBCOracleConnector dbMgr;
 
+    public MediaOracleDAO() {
+        this.dbMgr = JDBCOracleConnector.getInstance();
+    }
+
     @Override
     public Media find() {
         return null;

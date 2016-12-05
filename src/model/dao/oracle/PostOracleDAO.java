@@ -1,5 +1,7 @@
 package model.dao.oracle;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import model.dao.PostDAO;
 import model.entities.Media;
 import model.entities.Post;
@@ -23,9 +25,9 @@ public class PostOracleDAO implements PostDAO {
     @Override
     public Post find() {
         try {
-            String sqlStmt = "select posttext, postId from post where userid = 1";
+            String sqlStmt = "select posttext, postId from post where userid = ?";
             PreparedStatement stmt = dbMgr.getConnection().prepareStatement(sqlStmt);
-            //stmt.setInt(1,1);
+            stmt.setInt(1,1);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
@@ -36,12 +38,17 @@ public class PostOracleDAO implements PostDAO {
 
                 return post;
             } else {
-                System.out.println("no post");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "No post is found", ButtonType.OK);
+                alert.showAndWait();
                 return null;
             }
 
+
+
         } catch (SQLException e) {
            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK);
+            alert.showAndWait();
             return null;
         }
 

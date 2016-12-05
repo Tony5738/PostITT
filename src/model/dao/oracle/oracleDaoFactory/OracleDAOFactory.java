@@ -8,7 +8,7 @@ import model.entities.ITTUser;
 /**
  * Created by antho_000 on 30/11/2016.
  */
-public class OracleDaoFactory {
+public class OracleDAOFactory {
 
     public PostOracleDAO getPostOracleDAO(){
         return new PostOracleDAO();
