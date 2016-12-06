@@ -1,17 +1,15 @@
-package view;
+package app.view;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import model.entities.ITTUser;
-import model.entities.Post;
 
 /**
  * Created by antho_000 on 04/12/2016.
  */
-public class loginFormController {
+public class LoginFormController extends Controller {
 
     @FXML
     private TextField loginField;
@@ -23,7 +21,7 @@ public class loginFormController {
     private Button logInButton;
 
 
-    public loginFormController() {
+    public LoginFormController() {
     }
 
     @FXML
@@ -33,11 +31,15 @@ public class loginFormController {
             @Override
             public void handle(ActionEvent event) {
 
-                ITTUser user = new ITTUser();
+                System.out.println("OK");
+                //ITTUser user = new ITTUser();
 
-                ITTUser.getITTUserOracleDAO().login(loginField.getText(),passwordField.getText());
+                //ITTUser.getITTUserOracleDAO().login(loginField.getText(),passwordField.getText());
 
             }
         });
     }
+
+
+
 }

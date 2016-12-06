@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.PostViewController">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <ImageView fx:id="authorPic" fitHeight="37.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="lblPostTitle" layoutX="105.0" layoutY="14.0" text="Label" />
+      <Label fx:id="lblDate" layoutX="471.0" layoutY="14.0" text="Label" />
+      <Label fx:id="lblCategory" layoutX="381.0" layoutY="14.0" text="Label" />
+      <Label fx:id="lblPostText" layoutX="105.0" layoutY="76.0" text="Label" />
+      <Label fx:id="lblAuthorCompleteName" layoutX="20.0" layoutY="59.0" text="Label" />
+      <Label fx:id="lblPostType" layoutX="105.0" layoutY="33.0" text="Label" />
+   </children>
+</Pane>

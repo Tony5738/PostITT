@@ -1,9 +1,9 @@
-package model.entities;
+package app.model.entities;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
-import model.dao.oracle.ITTUserOracleDAO;
-import model.dao.oracle.oracleDaoFactory.OracleDAOFactory;
+import app.model.dao.oracle.ITTUserOracleDAO;
+import app.model.dao.oracle.oracleDaoFactory.OracleDAOFactory;
 
 /**
  * Created by antho_000 on 30/11/2016.

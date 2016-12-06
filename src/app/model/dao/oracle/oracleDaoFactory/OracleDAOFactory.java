@@ -1,9 +1,8 @@
-package model.dao.oracle.oracleDaoFactory;
+package app.model.dao.oracle.oracleDaoFactory;
 
-import model.dao.oracle.ITTUserOracleDAO;
-import model.dao.oracle.MediaOracleDAO;
-import model.dao.oracle.PostOracleDAO;
-import model.entities.ITTUser;
+import app.model.dao.oracle.ITTUserOracleDAO;
+import app.model.dao.oracle.MediaOracleDAO;
+import app.model.dao.oracle.PostOracleDAO;
 
 /**
  * Created by antho_000 on 30/11/2016.

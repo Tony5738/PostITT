@@ -1,8 +1,8 @@
-package model.dao.oracle;
+package app.model.dao.oracle;
 
-import model.dao.MediaDAO;
-import model.entities.Media;
-import oracleDBConnection.JDBCOracleConnector;
+import app.model.dao.MediaDAO;
+import app.model.entities.Media;
+import app.oracleDBConnection.JDBCOracleConnector;
 
 /**
  * Created by antho_000 on 30/11/2016.

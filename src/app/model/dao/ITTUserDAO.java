@@ -1,6 +1,6 @@
-package model.dao;
+package app.model.dao;
 
-import model.entities.ITTUser;
+import app.model.entities.ITTUser;
 
 /**
  * Created by antho_000 on 30/11/2016.

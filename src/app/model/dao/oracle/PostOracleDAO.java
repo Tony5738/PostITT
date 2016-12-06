@@ -1,11 +1,11 @@
-package model.dao.oracle;
+package app.model.dao.oracle;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import model.dao.PostDAO;
-import model.entities.Media;
-import model.entities.Post;
-import oracleDBConnection.JDBCOracleConnector;
+import app.model.dao.PostDAO;
+import app.model.entities.Media;
+import app.model.entities.Post;
+import app.oracleDBConnection.JDBCOracleConnector;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

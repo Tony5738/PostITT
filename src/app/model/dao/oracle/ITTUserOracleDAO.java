@@ -1,18 +1,8 @@
-package model.dao.oracle;
+package app.model.dao.oracle;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import model.dao.ITTUserDAO;
-import model.entities.ITTUser;
-import model.entities.Post;
-import oracle.jdbc.internal.OracleTypes;
-import oracle.jdbc.oracore.OracleType;
-import oracleDBConnection.JDBCOracleConnector;
-
-import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import app.model.dao.ITTUserDAO;
+import app.model.entities.ITTUser;
+import app.oracleDBConnection.JDBCOracleConnector;
 
 /**
  * Created by antho_000 on 30/11/2016.
@@ -37,7 +27,7 @@ public class ITTUserOracleDAO implements ITTUserDAO {
 
     @Override
     public ITTUser login(String email, String password) {
-        try {
+        /*try {
             String sqlStmt = "select login(?,?) from dual";
             CallableStatement cStmt = dbMgr.getConnection().prepareCall(sqlStmt);
             cStmt.setString(1,email);
@@ -80,6 +70,7 @@ public class ITTUserOracleDAO implements ITTUserDAO {
             alert.showAndWait();
             return null;
 
-        }
+        }*/
+        return null;
     }
 }

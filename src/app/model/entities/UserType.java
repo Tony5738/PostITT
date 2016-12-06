@@ -1,8 +1,7 @@
-package model.entities;
+package app.model.entities;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
-import model.dao.oracle.PostOracleDAO;
 
 /**
  * Created by antho_000 on 04/12/2016.

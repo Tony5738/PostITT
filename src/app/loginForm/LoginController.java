@@ -1,4 +1,4 @@
-package loginForm;
+package app.loginForm;
 
 public class LoginController {
 
