@@ -7,7 +7,7 @@ import app.model.entities.ITTUser;
  */
 public interface ITTUserDAO extends DAO<ITTUser>{
 
-    public ITTUser login(String email,String password);
+    public int login(String email,String password);
 
     public ITTUser refreshScore();
 

@@ -28,8 +28,8 @@ public class MediaOracleDAO implements MediaDAO {
     }
 
     @Override
-    public Media save(Media media) {
-        return null;
+    public void save(Media media) {
+
     }
 
 

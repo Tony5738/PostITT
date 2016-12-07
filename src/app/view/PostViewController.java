@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 /**
  * Created by antho_000 on 06/12/2016.
  */
-public class PostViewController {
+public class PostViewController extends Controller{
 
     @FXML
     private ImageView authorPic;

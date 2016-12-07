@@ -1,35 +1,33 @@
 package app.model.dao.oracle;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import app.model.dao.PostDAO;
-import app.model.entities.Media;
-import app.model.entities.Post;
+import app.model.dao.UserTypeDAO;
+import app.model.entities.UserType;
 import app.oracleDBConnection.JDBCOracleConnector;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by antho_000 on 30/11/2016.
+ * Created by antho_000 on 07/12/2016.
  */
-public class PostOracleDAO implements PostDAO {
+public class UserTypeOracleDAO implements UserTypeDAO {
+
 
     private JDBCOracleConnector dbMgr;
 
-    public PostOracleDAO() {
+    public UserTypeOracleDAO() {
+
         this.dbMgr = JDBCOracleConnector.getInstance();
     }
 
     @Override
-    public Post find(int id) {
+    public UserType find(int id) {
         return null;
     }
 
     @Override
-    public List<Post> findAll() {
+    public List<UserType> findAll() {
         /*try {
             String sqlStmt = "select posttext, postId from post where userid = ?";
             PreparedStatement stmt = dbMgr.getConnection().prepareStatement(sqlStmt);
@@ -54,20 +52,14 @@ public class PostOracleDAO implements PostDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK);
-            alert.showAndWait();
+            alert.showAndWait();*/
             return null;
-        }*/
-        return null;
+        //}
     }
 
     @Override
-    public void save(Post post) {
-
-    }
+    public void save(UserType userType) {
 
 
-    @Override
-    public Media getMedia() {
-        return null;
     }
 }

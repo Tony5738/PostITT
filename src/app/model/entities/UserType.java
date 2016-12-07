@@ -1,5 +1,8 @@
 package app.model.entities;
 
+import app.model.dao.UserTypeDAO;
+import app.model.dao.oracle.PostOracleDAO;
+import app.model.dao.oracle.oracleDaoFactory.OracleDAOFactory;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
 
@@ -9,6 +12,7 @@ import javafx.beans.property.StringProperty;
 public class UserType {
 
 
+    private static OracleDAOFactory oracleDAOFactory = new OracleDAOFactory();
 
     private IntegerProperty UserTypeID;
     private StringProperty TypeDescription;
@@ -40,6 +44,9 @@ public class UserType {
         return TypeDescription;
     }
 
-
+    public static UserTypeDAO getUserTypeDAO()
+    {
+        return oracleDAOFactory.getUserTypeOracleDAO();
+    }
 
 }

@@ -17,6 +17,6 @@ public interface DAO<E> {
     public List<E> findAll();
 
     //Allow the insertion in the database
-    public E save(E e);
+    public void save(E e);
 
 }

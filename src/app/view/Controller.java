@@ -9,6 +9,7 @@ public class Controller {
 
     public void setMainController(MainController mainController){
         this.mainController = mainController;
+        //System.out.println("controller "+this.mainController.getAppUserID());
     }
 
 }

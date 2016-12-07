@@ -6,6 +6,7 @@ import javafx.scene.control.ButtonType;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Created by antho_000 on 01/12/2016.
@@ -61,6 +62,17 @@ public final class JDBCOracleConnector {
                 alert.showAndWait();
             }
             return null;
+        }
+
+        public void closeStatement(Statement stmt) {
+            try {
+                if(stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "An error occured during the closing of the statement", ButtonType.OK);
+                alert.showAndWait();
+            }
         }
 
 

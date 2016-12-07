@@ -17,6 +17,8 @@ import javafx.scene.image.ImageView;
  */
 public class UserProfileController extends Controller {
 
+
+
     @FXML
     private ImageView profilePic;
 
@@ -35,12 +37,16 @@ public class UserProfileController extends Controller {
     @FXML
     private Button btnCreateUser;
 
+    @FXML
+    private Button btnLogout;
+
     public UserProfileController() {
+
+
     }
 
     @FXML
     private void initialize() {
-
 
 
         ITTUser user = ITTUser.getITTUserOracleDAO().find(38);
@@ -52,7 +58,7 @@ public class UserProfileController extends Controller {
                 if(user.getProfilePic() != null)
                 {
 
-                    Image pic = new Image("/app/" + user.getProfilePic());
+                    Image pic = new Image(user.getProfilePic());
                     profilePic.setImage(pic);
                 }else
                 {
@@ -91,8 +97,16 @@ public class UserProfileController extends Controller {
         btnCreateUser.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                mainController.showCreateUserForm();
+            }
+        });
 
-                //call a new view
+        btnLogout.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mainController.setAppUserID(0);
+                mainController.showLoginForm();
+                mainController.hideProfileView();
             }
         });
 

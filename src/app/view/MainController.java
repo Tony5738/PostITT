@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -21,10 +22,24 @@ public class MainController {
     private Stage primaryStage;
     private BorderPane rootLayout;
 
+    //user id of the user, which is using the app
+    private int appUserID;
+
+    public int getAppUserID() {
+        return appUserID;
+    }
+
+    public void setAppUserID(int appUserID) {
+        this.appUserID = appUserID;
+    }
+
     public MainController(Stage primaryStage) {
+
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("PostITT");
         this.primaryStage.getIcons().add(new Image("app/img/post_it.png"));
+
+        this.appUserID = 0;
     }
 
     /**
@@ -64,7 +79,7 @@ public class MainController {
             loader.setLocation(Main.class.getResource("view/login_form.fxml"));
             Pane loginForm = (Pane) loader.load();
 
-            rootLayout.setLeft(loginForm);
+            rootLayout.setCenter(loginForm);
 
             LoginFormController loginFormController = loader.getController();
             loginFormController.setMainController(this);
@@ -76,16 +91,20 @@ public class MainController {
         }
     }
 
+    public void hideProfileView(){
+        rootLayout.setRight(null);
+    }
+
 
     /**
-     * show the login form on the root layout
+     * show the user profile on the root layout
      */
     public void showUserProfile(){
         try {
             // Load user profile view.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/user_profile_view.fxml"));
-            Pane userProfile = (Pane) loader.load();
+            GridPane userProfile = (GridPane) loader.load();
 
             rootLayout.setRight(userProfile);
 
@@ -101,7 +120,7 @@ public class MainController {
     }
 
     /**
-     * show the login form on the root layout
+     * show the post list view on the root layout
      */
     public void showPostListView(){
         try {
@@ -112,6 +131,30 @@ public class MainController {
 
             rootLayout.setCenter(postListView);
 
+            //PostListViewController postListViewController = loader.getController();
+            //postListViewController.setMainController(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK);
+            alert.showAndWait();
+        }
+    }
+
+    /**
+     * show the create user view on the root layout
+     */
+    public void showCreateUserForm(){
+        try {
+            // Load create user form.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/create_user_form.fxml"));
+            GridPane createUserForm = (GridPane) loader.load();
+
+            rootLayout.setRight(createUserForm);
+
+            CreateUserFormController createUserFormController = loader.getController();
+            createUserFormController.setMainController(this);
 
 
         } catch (IOException e) {
