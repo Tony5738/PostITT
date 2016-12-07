@@ -9,4 +9,6 @@ public interface ITTUserDAO extends DAO<ITTUser>{
 
     public ITTUser login(String email,String password);
 
+    public ITTUser refreshScore();
+
 }

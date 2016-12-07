@@ -10,6 +10,7 @@ import app.oracleDBConnection.JDBCOracleConnector;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by antho_000 on 30/11/2016.
@@ -23,8 +24,13 @@ public class PostOracleDAO implements PostDAO {
     }
 
     @Override
-    public Post find() {
-        try {
+    public Post find(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Post> findAll() {
+        /*try {
             String sqlStmt = "select posttext, postId from post where userid = ?";
             PreparedStatement stmt = dbMgr.getConnection().prepareStatement(sqlStmt);
             stmt.setInt(1,1);
@@ -46,18 +52,19 @@ public class PostOracleDAO implements PostDAO {
 
 
         } catch (SQLException e) {
-           e.printStackTrace();
+            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK);
             alert.showAndWait();
             return null;
-        }
-
+        }*/
+        return null;
     }
 
     @Override
-    public Post save() {
+    public Post save(Post post) {
         return null;
     }
+
 
     @Override
     public Media getMedia() {

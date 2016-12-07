@@ -2,6 +2,8 @@ package app.model.entities;
 
 import app.model.dao.oracle.PostOracleDAO;
 import app.model.dao.oracle.oracleDaoFactory.OracleDAOFactory;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  * Created by antho_000 on 30/11/2016.
@@ -10,25 +12,14 @@ public class Post {
 
     private static OracleDAOFactory oracleDAOFactory = new OracleDAOFactory();
 
-    private int postId;
+    private IntegerProperty postId;
+    private StringProperty postText;
+    private StringProperty date;
+    private ITTUser author;
+    private PostType postType;
+    private Category category;
 
-    public String getPostText() {
-        return postText;
-    }
 
-    public void setPostText(String postText) {
-        this.postText = postText;
-    }
-
-    private String postText;
-
-    public int getPostId() {
-        return postId;
-    }
-
-    public void setPostId(int postId) {
-        this.postId = postId;
-    }
 
 
     public static PostOracleDAO getPostOracleDAO()

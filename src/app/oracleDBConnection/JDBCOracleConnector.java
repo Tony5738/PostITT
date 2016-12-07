@@ -46,9 +46,11 @@ public final class JDBCOracleConnector {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 connection = DriverManager.getConnection("jdbc:oracle:thin:@" + prop.getProperties("connectionUrl"), prop.getProperties("username"), prop.getProperties("password"));
 
-               /* Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Successfully connected to the database", ButtonType.OK);
-                alert.showAndWait();*/
+                //Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Successfully connected to the database", ButtonType.OK);
+                //alert.showAndWait();
+
                 return connection;
+
             } catch (ClassNotFoundException e) {
 
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Impossible to find the Oracle JDBC Driver", ButtonType.OK);

@@ -4,6 +4,8 @@ import app.model.dao.MediaDAO;
 import app.model.entities.Media;
 import app.oracleDBConnection.JDBCOracleConnector;
 
+import java.util.List;
+
 /**
  * Created by antho_000 on 30/11/2016.
  */
@@ -16,12 +18,19 @@ public class MediaOracleDAO implements MediaDAO {
     }
 
     @Override
-    public Media find() {
+    public Media find(int id) {
         return null;
     }
 
     @Override
-    public Media save() {
+    public List<Media> findAll() {
         return null;
     }
+
+    @Override
+    public Media save(Media media) {
+        return null;
+    }
+
+
 }

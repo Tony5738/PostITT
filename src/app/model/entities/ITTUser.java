@@ -1,6 +1,8 @@
 package app.model.entities;
 
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import app.model.dao.oracle.ITTUserOracleDAO;
 import app.model.dao.oracle.oracleDaoFactory.OracleDAOFactory;
@@ -12,7 +14,7 @@ public class ITTUser {
 
     private static OracleDAOFactory oracleDAOFactory = new OracleDAOFactory();
 
-    private IntegerProperty userID;
+    private IntegerProperty ITTUserID;
     private StringProperty firstname;
     private StringProperty surname;
     private StringProperty password;
@@ -23,19 +25,26 @@ public class ITTUser {
 
 
     public ITTUser() {
+        this.ITTUserID = new SimpleIntegerProperty();
+        this.firstname = new SimpleStringProperty();
+        this.surname = new SimpleStringProperty();
+        this.password = new SimpleStringProperty();
+        this.email = new SimpleStringProperty();
+        this.score = new SimpleIntegerProperty();
+        this.profilePic = new SimpleStringProperty();
+        this.userType = new UserType();
     }
 
-
-    public int getUserID() {
-        return userID.get();
+    public int getITTUserID() {
+        return ITTUserID.get();
     }
 
-    public void setUserID(int userID) {
-        this.userID.set(userID);
+    public void setITTUserID(int ITTUserID) {
+        this.ITTUserID.set(ITTUserID);
     }
 
     public IntegerProperty userIDProperty() {
-        return userID;
+        return ITTUserID;
     }
 
     public String getFirstname() {

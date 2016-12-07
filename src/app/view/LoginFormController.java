@@ -31,7 +31,7 @@ public class LoginFormController extends Controller {
             @Override
             public void handle(ActionEvent event) {
 
-                System.out.println("OK");
+
                 //ITTUser user = new ITTUser();
 
                 //ITTUser.getITTUserOracleDAO().login(loginField.getText(),passwordField.getText());

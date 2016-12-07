@@ -22,7 +22,7 @@ public class OracleDBProperties extends Properties{
             fileStream = new FileInputStream(file);
             super.load(fileStream);
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Impossible to open the file", ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Impossible to open the file", ButtonType.OK);
             alert.showAndWait();
         } finally {
             try {
