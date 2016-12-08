@@ -20,10 +20,9 @@ public class Main extends Application {
 
 
         mainController.initRootLayout();
-
-        //mainController.showLoginForm();
-        mainController.showPostListView();
-        mainController.showUserProfile();
+        mainController.showLoginForm();
+        //mainController.showPostListView();
+        //mainController.showUserProfile();
     }
 
 
